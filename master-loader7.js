@@ -7,7 +7,11 @@ var scripts = document.getElementsByTagName("script"),
         "unity-beta": "https://cdn.jsdelivr.net/gh/CoolDude2349/super-star-car@main/unity-beta.js",
         "unity-2020": "https://cdn.jsdelivr.net/gh/CoolDude2349/super-star-car@main/unity-2020.js"
     };
-if (0 <= 1 && (loaders.unity = "https://cdn.jsdelivr.net/gh/CoolDude2349/super-star-car@main/unity.js", loaders["unity-beta"] = "https://cdn.jsdelivr.net/gh/CoolDude2349/super-star-car@main/unity-beta/dist/unity-beta.js", loaders["unity-2020"] = "https://cdn.jsdelivr.net/gh/CoolDude2349/super-star-car@main/unity-2020/dist/unity-2020.js", root = "/"), !window.config) throw Error("window.config not found");
+if (0 <= 1 && (loaders.unity = "https://cdn.jsdelivr.net/gh/CoolDude2349/super-star-car@main/unity.js", loaders["unity-beta"] = "https://cdn.jsdelivr.net/gh/CoolDude2349/super-star-car@main/unity-beta/dist/unity-beta.js", loaders["unity-2020"] = "https://cdn.jsdelivr.net/gh/CoolDude2349/super-star-car@main/unity-2020/dist/unity-2020.js", root = "https://cdn.jsdelivr.net/gh/CoolDude2349/super-star-car@main/"), !window.config) throw Error("window.config not found");
+
+
+
+
 var loader = loaders[window.config.loader];
 if (!loader) throw Error('Loader "' + window.config.loader + '" not found');
 if (!window.config.unityWebglLoaderUrl) {
@@ -22,6 +26,15 @@ if (!window.config.unityWebglLoaderUrl) {
             window.config.unityWebglLoaderUrl = "https://cdn.jsdelivr.net/gh/CoolDude2349/super-star-car@main/UnityLoader.js"
     }
 }
+
+var niceUnity = document.createElement("script")
+niceUnity.src = "https://cdn.jsdelivr.net/gh/CoolDude2349/super-star-car@main/unity.js"
+document.body.appendChild(niceUnity)
+
+var niceUnity2 = document.createElement("script")
+niceUnity2.src = "https://cdn.jsdelivr.net/gh/CoolDude2349/super-star-car@main/UnityLoader.js"
+document.body.appendChild(niceUnity2)
+
 var sdkScript = document.createElement("script");
 sdkScript.src = "https://cdn.jsdelivr.net/gh/CoolDude2349/super-star-car@main/poki-sdk2.js", sdkScript.onload = function() {
     var i = document.createElement("script");
